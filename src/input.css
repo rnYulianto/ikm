@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.cover .title-container {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  /* background: #000; */
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.cover .intro {
+  font-size: 3vw;
+}
+.cover .main-intro {
+  mix-blend-mode: multiply;
+  font-size: 15vw;
+  letter-spacing: -10px;
+  margin-top: -20px;
+}
+

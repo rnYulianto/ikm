@@ -192,6 +192,25 @@
         </div>
     </section>
 
+    <section id="map-section">
+        <div id="map-chart" class="flex flex-row-reverse items-center" style="top: 30%">
+            <!-- <br><br><br><br> -->
+            <div id="peta" style="width: 100%;height:900px;"></div>
+        </div>
+        <!-- <div id="pie-explain" class="flex flex-row-reverse items-center -z-10" style="position: absolute; border-radius: 10px; display: inline-block; top: 30%; left: 20%; text-align: center; justify-content: center; align-items: center; width: 700px; background-color: rgba(0, 0, 0, 0.6);">
+            <p style="color: white; text-align: center; padding: 30px;" >
+                <font size="+2">
+                    Untuk hasil jangka panjang, Indonesia membutuhkan program yang multifacet dan spesifik sesuai konteks. 
+                    Dengan pendekatan holistik yang mengatasi tantangan multidimensi yang unik dari kemiskinan, rumah tangga dapat keluar dari lingkaran kemiskinan untuk jangka panjang, 
+                    memungkinkan generasi mendatang untuk berkembang
+                </font>
+            </p>
+        </div> -->
+    </section>
+
+
+    
+
 </body>
 <script>
     // ARROW
@@ -745,6 +764,238 @@
         onEnter: () => run(dimensi = 3),
         // markers: true
     });
+
+    // PETA SECTION
+    gsap.timeline({
+        scrollTrigger:
+        {
+            trigger: '#map-section',
+            start: 'center center',
+            end: '+=1500',
+            duration: 50,
+            scrub: true,
+            pin: true
+        }
+    })
+        .fromTo("#map-chart", { scale: 0.5, opacity: 0.1 }, { scale: 1, opacity: 1, y: "+=20", duration: 0.5 })
+        // .to("#pie-chart", { x: "-=450" })
+        // .fromTo('#pie-explain', { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.5, x: "+=650" }, "-=0.5")
+
+    // PETA CHART
+    var myPeta = echarts.init(document.getElementById('peta'));
+    var option_peta;
+
+    myPeta.showLoading();
+    $.get('assets/provinsi.json', function (usaJson) {
+    myPeta.hideLoading();
+    echarts.registerMap('USA', usaJson);
+    option_peta = {
+        title: {
+            text: 'SEBARAN INDEKS KEMISKINAN MULTIDIMENSI MENURUT PROVINSI (2022)',
+            textStyle: {
+                fontSize: '30',
+                },
+            // subtext: 'Data from www.census.gov',
+            // sublink: 'http://www.census.gov/popest/data/datasets.html',
+            left: 'center'
+        },
+            tooltip: {
+            trigger: 'item',
+            showDelay: 0,
+            transitionDuration: 0.2
+        },
+            visualMap: {
+            left: 'right',
+            min: 0,
+            max: 50,
+            inRange: {
+                color: [
+                '#313695',
+                '#4575b4',
+                '#74add1',
+                '#abd9e9',
+                '#e0f3f8',
+                '#ffffbf',
+                '#fee090',
+                '#fdae61',
+                '#f46d43',
+                '#d73027',
+                '#a50026'
+                ]
+        },
+        text: ['Tertinggi', 'Terendah'],
+        calculable: true
+        },
+        toolbox: {
+            show: true,
+            //orient: 'vertical',
+            left: 'left',
+            top: 'top',
+            feature: {
+                dataView: { readOnly: false },
+                restore: {},
+                saveAsImage: {}
+            }
+        },
+        series: [
+        {
+            name: 'INDEKS KEMISKINAN MULTIDIMENSI',
+            type: 'map',
+            roam: 'move',
+            nodeClick: false,
+            // roam: true,
+            map: 'USA',
+            emphasis: {
+                label: {
+                    show: true
+                }
+            },
+            data: [
+                {
+                    "name": "ACEH",
+                    "value": 11.32
+                },
+                {
+                    "name": "SUMATERA UTARA",
+                    "value": 10.63
+                },
+                {
+                    "name": "SUMATERA BARAT",
+                    "value": 12.74
+                },
+                {
+                    "name": "RIAU",
+                    "value": 12.84
+                },
+                {
+                    "name": "JAMBI",
+                    "value": 12.78
+                },
+                {
+                    "name": "SUMATERA SELATAN",
+                    "value": 13.41
+                },
+                {
+                    "name": "BENGKULU",
+                    "value": 11.19
+                },
+                {
+                    "name": "LAMPUNG",
+                    "value": 12.11
+                },
+                {
+                    "name": "KEPULAUAN BANGKA BELITUNG",
+                    "value": 10.63
+                },
+                {
+                    "name": "KEPULAUAN RIAU",
+                    "value": 7.89
+                },
+                {
+                    "name": "DKI JAKARTA",
+                    "value": 5.24
+                },
+                {
+                    "name": "JAWA BARAT",
+                    "value": 12.4
+                },
+                {
+                    "name": "JAWA TENGAH",
+                    "value": 10.34
+                },
+                {
+                    "name": "DI YOGYAKARTA",
+                    "value": 3.42
+                },
+                {
+                    "name": "JAWA TIMUR",
+                    "value": 10.07
+                },
+                {
+                    "name": "BANTEN",
+                    "value": 10.6
+                },
+                {
+                    "name": "BALI",
+                    "value": 4.14
+                },
+                {
+                    "name": "NUSA TENGGARA BARAT",
+                    "value": 8.67
+                },
+                {
+                    "name": "NUSA TENGGARA TIMUR",
+                    "value": 41.44
+                },
+                {
+                    "name": "KALIMANTAN BARAT",
+                    "value": 19.15
+                },
+                {
+                    "name": "KALIMANTAN TENGAH",
+                    "value": 16.66
+                },
+                {
+                    "name": "KALIMANTAN SELATAN",
+                    "value": 12.97
+                },
+                {
+                    "name": "KALIMANTAN TIMUR",
+                    "value": 8.26
+                },
+                {
+                    "name": "KALIMANTAN UTARA",
+                    "value": 12.75
+                },
+                {
+                    "name": "SULAWESI UTARA",
+                    "value": 12.3
+                },
+                {
+                    "name": "SULAWESI TENGAH",
+                    "value": 22.73
+                },
+                {
+                    "name": "SULAWESI SELATAN",
+                    "value": 12
+                },
+                {
+                    "name": "SULAWESI TENGGARA",
+                    "value": 15.32
+                },
+                {
+                    "name": "GORONTALO",
+                    "value": 18.12
+                },
+                {
+                    "name": "SULAWESI BARAT",
+                    "value": 23.23
+                },
+                {
+                    "name": "MALUKU",
+                    "value": 28.13
+                },
+                {
+                    "name": "MALUKU UTARA",
+                    "value": 30.36
+                },
+                {
+                    "name": "PAPUA BARAT",
+                    "value": 27.99
+                },
+                {
+                    "name": "PAPUA",
+                    "value": 42.62
+                }
+                ]
+        }
+        ]
+    };
+    myPeta.setOption(option_peta);
+    });
+
+    option_peta && myPeta.setOption(option_peta);
+
       
 
 </script>

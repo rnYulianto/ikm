@@ -6,7 +6,6 @@
 .cover .title-container {
   position: absolute;
   height: 100%;
-  width: 100%;
   text-align: center;
   font-family: 'Poppins', sans-serif;
   /* background: #000; */
@@ -26,3 +25,21 @@
   margin-top: -20px;
 }
 
+#people g{
+  fill: #93c13d;
+}
+
+/* #people g.moneter{
+  fill: orange;
+  fill-opacity: 1;
+}
+
+#people g.both{
+  fill: gray;
+  fill-opacity: 1;
+}
+
+#people g.multi{
+  fill: red;
+  fill-opacity: 1;
+} */

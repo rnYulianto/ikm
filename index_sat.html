@@ -52,7 +52,7 @@
         </div>
     </section>
 
-    <section id="suyati-section" class="flex flex-col justify-center items-center">
+    <section id="suyati-section" class="flex flex-col justify-center items-center h-screen">
         <div style="position: relative; display: inline-block;">
             <img id="suyati-gambar" src="assets\images\suyati_shadow.jpg" alt="Cover" style="display: block;"></img>
                 <div id="suyati-awal" style="position: absolute; display: inline-block; top: 8%; left: 5%; text-align: justify; justify-content: center; align-items: center; width: 730px">
@@ -258,7 +258,7 @@
             duration: 5,
             scrub: true,
             pin: true,
-            // markers: true
+            markers: true
         }
     })
     // .from("#suyati-awal", { opacity: -100 })
@@ -297,7 +297,7 @@
             pin: true
         }
     })
-        .fromTo("#pie-chart", { scale: 0.5, opacity: 0.1 }, { scale: 1, opacity: 1, duration: 0.5 })
+        .fromTo("#pie-chart", { scale: 0.5, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.5 })
         .to("#pie-chart", { x: "-=450" })
         .fromTo('#pie-explain', { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.5, x: "+=650" }, "-=0.5")
 
@@ -777,7 +777,7 @@
             pin: true
         }
     })
-        .fromTo("#map-chart", { scale: 0.5, opacity: 0.1 }, { scale: 1, opacity: 1, y: "+=20", duration: 0.5 })
+        .fromTo("#map-chart", { scale: 0.5, opacity: 0 }, { scale: 1, opacity: 1, y: "+=20", duration: 0.5 })
         // .to("#pie-chart", { x: "-=450" })
         // .fromTo('#pie-explain', { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.5, x: "+=650" }, "-=0.5")
 

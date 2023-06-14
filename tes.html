@@ -1,25 +1,176 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MPI</title>
+
+    <link rel="stylesheet" href="assets/css/mpi.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
     <script src="https://unpkg.co/gsap@3/dist/gsap.min.js"></script>
     <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+    <!-- <script src="https://unpkg.com/gsap@3/dist/ScrollToPlugin.min.js"></script> -->
 
     <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.1/dist/echarts.min.js"></script>
-    <script src="//unpkg.com/alpinejs" defer></script>
-
-    <link rel="stylesheet" href="assets/css/index.css">
-    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
+
 <body>
-    <div id="second" class="-z-10 bg-blue-400 h-screen w-screen fixed top-0 left-0"></div>
-    <div id="first" class="bg-black h-screen"></div>
-    <div id="second" class="h-screen"></div>
-    <div id="third" class="bg-green-400 h-screen"></div>
+    <section id="title-section" class="flex flex-col justify-center items-center">
+        <h1 class="title text-4xl font-bold">Multidimensional Poverty Index</h1>
+        <h2 class="subtitle text-xl">Direktorat Analisis & Pengembangan Statistik</h2>
+        <div class="scroll-down">Scroll down<div class="arrow"></div>
+    </section>
+
+    <section id="suyati-section" class="flex flex-col justify-center items-center h-screen overflow-hidden">
+        <div class="h-full w-full" style="position: relative; display: inline-block;">
+            <img class="h-full w-full object-cover" id="suyati-gambar" src="assets\images\suyati_shadow.jpg" alt="Cover" style="display: block;"></img>
+            <div id="suyati-awal"
+                style="position: absolute; display: inline-block; top: 8%; left: 5%; text-align: justify; justify-content: center; align-items: center; width: 730px">
+                <p style="color: white; text-align: justify;">
+                    <font size="+3">
+                        Suyati adalah adalah seorang perempuan berusia 40 tahun yang hidup di pinggiran teluk jakarta.
+                        Suyati tinggal bersama suami dan ketiga anaknya.
+                        Suyati hanya tamatan SD. Anak pertama berhenti sekolah di kelas 2 SMP karena membantu ayahnya
+                        bekerja sebagai nelayan.
+                    </font>
+                </p>
+                <br>
+                <br>
+                <hr style="border: none; border-top: 1px solid white;">
+                <br>
+                <br>
+                <p style="color: white; text-align: justify;">
+                    <font size="+3">
+                        Rumah Suyati tidak terlalu lebar terbuat dari bilik kayu beratap seng.
+                        Rumah Suyati tidak mendapatkan aliran listrik PLN, sehingga ia mendapatkan listrik secara
+                        ilegal.
+                    </font>
+                </p>
+                <br>
+                <br>
+                <hr style="border: none; border-top: 1px solid white;">
+                <br>
+                <br>
+                <p style="color: white; text-align: justify;">
+                    <font size="+3">
+                        Rumah Suyati tidak memiliki toilet.
+                        Ia menggunakan toilet umum untuk mencuci, mandi, dan buang air dengan iuran bulanan sebesar Rp
+                        50.000,00.
+                    </font>
+                </p>
+                <br>
+                <br>
+                <hr style="border: none; border-top: 1px solid white;">
+                <br>
+                <br>
+                <p style="color: white; text-align: justify;">
+                    <font size="+3">
+                        Suyati bekerja sebagai pengupas kulit kerang seharian. Anak bungsunya sering makan mie instan
+                        karena ia tidak sempat memasak.
+                        Setiap bulan ia bisa mengantongi uang sebesar 200 hingga 300 ribu rupiah untuk membantu suaminya
+                        yang bekerja sebagai nelayan dengan
+                        penghasilan per bulan sekitar Rp2.000.000,00.
+                    </font>
+                </p>
+                <br>
+                <br>
+                <hr style="border: none; border-top: 1px solid white;">
+                <br>
+                <br>
+                <p style="color: white; text-align: justify;">
+                    <font size="+3">
+                        Apabila dibandingkan dengan garis kemiskinan nasional pada Maret 2018, keluarga Suyati tidak
+                        tergolong miskin berdasarkan pendekatan moneter.
+                        Pemerintah menetapkan garis kemiskinan per kapita sebesar Rp 401.222,00 atau Rp 1,84 juta per
+                        rumah tangga per bulan.
+                        Ini memperlihatkan bahwa rumah tangga Suyati tidak mengalami kemiskinan yang ditetapkan oleh
+                        BPS.
+                    </font>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="page67-section" class="flex flex-col justify-center items-center overflow-hidden h-screen">
+        <div style="position: relative; display: inline-block;">
+            <img id="page67-gambar-warna" src="assets\images\india_warna.png" alt="Cover"
+                style="display: block; position: absolute;"></img>
+            <img id="page67-gambar" src="assets\images\india.jpg" alt="Cover"
+                style="display: block; position: relative;"></img>
+            <div id="page67-text"
+                style="position: absolute; border-radius: 10px; display: inline-block; top: 20%; left: 55%; text-align: justify; justify-content: center; align-items: center; width: 750px; background-color: rgba(0, 0, 0, 0.6);">
+                <p style="color: white; text-align: justify; padding: 30px;">
+                    <font size="+3.5">
+                        Kita tidak bisa menghilangkan tantangan ini dengan berfokus pada pendekatan moneter saja.
+                        Untuk mengatasi perbedaan tersebut, kita perlu memahami kemiskinan dari sudut pandang
+                        multidimensi.
+                    </font>
+                </p>
+            </div>
+            <div id="page67-text-2"
+                style="position: absolute; border-radius: 10px; display: inline-block; top: 20%; left: 20%; text-align: center; justify-content: center; align-items: center; width: 1200px; background-color: rgba(0, 0, 0, 0.6);">
+                <p style="color: white; text-align: center; padding: 30px;">
+                    <font size="+3.5">
+                        Untuk hasil jangka panjang, Indonesia membutuhkan program yang multifacet dan spesifik sesuai
+                        konteks.
+                        Dengan pendekatan holistik yang mengatasi tantangan multidimensi yang unik dari kemiskinan,
+                        rumah tangga dapat keluar dari lingkaran kemiskinan untuk jangka panjang,
+                        memungkinkan generasi mendatang untuk berkembang
+                    </font>
+                </p>
+            </div>
+        </div>
+    </section>
 </body>
 <script>
-    
+    // ARROW
+    gsap.to('.arrow', { y: 12, ease: "power1.inOut", repeat: -1, yoyo: true });
+
+    // TITLE SECTION
+    gsap.timeline().from('.title', { opacity: 0, y: '+=30', duration: 1 }).from('.subtitle', { opacity: 0, duration: 0.7 })
+    gsap.timeline({ scrollTrigger: { trigger: '#title-section', start: '+=50 top', end: 'bottom top', scrub: true } })
+        .to('.title', { scale: 2.3 }, 0).to('.subtitle', { opacity: -100 }, 0)
+
+    // SUYATI SECTION
+    // gsap.timeline().from('#suyati-section', { opacity: 0.5, y: '+=30', duration: 2 })
+    gsap.timeline({
+        scrollTrigger:
+        {
+            trigger: '#suyati-section',
+            start: 'center center',
+            end: '+=1500',
+            duration: 5,
+            scrub: true,
+            pin: true,
+            markers: true
+        }
+    })
+        // .from("#suyati-awal", { opacity: -100 })
+        // .fromTo("#suyati-gambar", {opacity: 0.5 }, { opacity: 1, duration: 3 })
+        .fromTo("#suyati-awal", { y: "0" }, { y: -1000, duration: 18 })
+
+    // HABIS SUYATI SECTION
+    gsap.timeline({
+        scrollTrigger:
+        {
+            trigger: '#page67-section',
+            start: 'center center',
+            end: '+=1500',
+            duration: 10,
+            scrub: true,
+            pin: true,
+            // markers: true
+        }
+    })
+        .fromTo('#page67-text', { opacity: 0, y: '+=100' }, { opacity: 1, y: 0, duration: 3 })
+        .to("#page67-text", { duration: 5 })
+        .to("#page67-text", { opacity: 0.0, y: '-=350', duration: 5 })
+        .fromTo('#page67-text-2', { opacity: 0, y: '+=150' }, { opacity: 1, y: 0, duration: 3 })
+        .to("#page67-gambar", { opacity: 0, duration: 5 })
+        .to("#page67-gambar", { duration: 5 })
 </script>
+
 </html>

@@ -3,6 +3,10 @@
 @tailwind components;
 @tailwind utilities;
 
+.pin-spacer {
+  background-color: white;
+}
+
 .cover .title-container {
   position: absolute;
   height: 100%;

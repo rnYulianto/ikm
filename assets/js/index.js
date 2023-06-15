@@ -50,7 +50,7 @@ var gkTl = gsap.timeline({
         // immediateRender: true,
         trigger: "#gk",
         start: 'top top',
-        end: '+=9000 bottom',
+        end: '+=8000 bottom',
         scrub: true,
         pin: true,
         // markers: true
@@ -76,6 +76,24 @@ gkTl.to('#gambar-listrik', { x: '50vh' }, 'makan')
 gkTl.from('#gambar-makan', { y: '50vh' }, 'makan')
 gkTl.set('#makan', { delay: 0.1 })
 
+gsap.timeline({
+    scrollTrigger:
+    {
+        trigger: '#page67-section',
+        start: 'center center',
+        end: '+=1500',
+        scrub: true,
+        pin: true,
+        // markers: true
+    }
+})
+.fromTo('#page67-text', { opacity: 0, y: '+=100' }, { opacity: 1, y: 0, duration: 3 })
+.to("#page67-text", { duration:2 })
+.to("#page67-text", { opacity: 0.0, y: '-=350', duration:3 })
+.add('gray')
+.fromTo('#page67-text-2', { opacity: 0, y: '+=150' }, { opacity: 1, y: 0, duration: 3 }, 'gray')
+.from('#page67-gambar-warna', {filter: 'grayscale(100)', duration: 3}, 'gray')
+.to("#page67-text", { duration:2 })
 
 function getPeopleTrigger(num) {
     return {
@@ -90,50 +108,27 @@ function getPeopleTrigger(num) {
     }
 }
 
-var peopleTimeline1 = gsap.timeline(getPeopleTrigger(2)).add('change')
+var peopleTimeline1 = gsap.timeline(getPeopleTrigger(2))
 peopleTimeline1.to('#people g', { fill: 'gray', 'fill-opacity': .1 }, 'change')
 peopleTimeline1.to('g.moneter, g.both', { fill: 'orange', 'fill-opacity': 1 }, 'change')
 
-var peopleTimeline2 = gsap.timeline(getPeopleTrigger(3)).add('change')
+var peopleTimeline2 = gsap.timeline(getPeopleTrigger(3))
 peopleTimeline2.to('#people g', { fill: 'gray', 'fill-opacity': .1 }, 'change')
 peopleTimeline2.to('g.multi, g.both', { fill: 'gray', 'fill-opacity': 1 }, 'change')
 
-var peopleTimeline2 = gsap.timeline(getPeopleTrigger(4)).add('change')
+var peopleTimeline2 = gsap.timeline(getPeopleTrigger(4))
 peopleTimeline2.to('#people g', { fill: 'gray', 'fill-opacity': .1 }, 'change')
 peopleTimeline2.to('g.both', { fill: 'red', 'fill-opacity': 1 }, 'change')
 
-var peopleTimeline2 = gsap.timeline(getPeopleTrigger(5)).add('change')
+var peopleTimeline2 = gsap.timeline(getPeopleTrigger(5))
 peopleTimeline2.to('#people g', { fill: 'gray', 'fill-opacity': .1 }, 'change')
 peopleTimeline2.to('g.multi', { fill: 'gray', 'fill-opacity': 1 }, 'change')
 
-var peopleTimeline2 = gsap.timeline(getPeopleTrigger(6)).add('change')
+var peopleTimeline2 = gsap.timeline(getPeopleTrigger(6))
 peopleTimeline2.to('#people g', { fill: 'gray', 'fill-opacity': .1 }, 'change')
 peopleTimeline2.to('g.both', { fill: 'red', 'fill-opacity': 1 }, 'change')
 peopleTimeline2.to('g.moneter', { fill: 'orange', 'fill-opacity': 1 }, 'change')
 peopleTimeline2.to('g.multi', { fill: 'gray', 'fill-opacity': 1 }, 'change')
-
-
-// Satria Start Here
-// HABIS SUYATI SECTION
-gsap.timeline({
-    scrollTrigger:
-    {
-        trigger: '#page67-section',
-        start: 'center center',
-        end: '+=1500',
-        duration: 10,
-        scrub: true,
-        pin: true,
-        // markers: true
-    }
-})
-.fromTo('#page67-text', { opacity: 0, y: '+=100' }, { opacity: 1, y: 0, duration: 3 })
-.to("#page67-text", { duration:2 })
-.to("#page67-text", { opacity: 0.0, y: '-=350', duration:3 })
-.add('gray')
-.fromTo('#page67-text-2', { opacity: 0, y: '+=150' }, { opacity: 1, y: 0, duration: 3 }, 'gray')
-.from('#page67-gambar-warna', {filter: 'grayscale(100)', duration: 3}, 'gray')
-.to("#page67-text", { duration:2 })
 
 // PIE SECTION
 gsap.timeline({
@@ -193,7 +188,6 @@ var pie_option = {
         }
     ]
 };
-
 // Tampilkan grafik dengan konfigurasi yang telah ditentukan
 myPie.setOption(pie_option);
 
@@ -526,7 +520,7 @@ var run = function (dimensi = 1) {
                 }
             }
         ];
-    };
+    } else myChart.clear();
 
     option = {
         tooltip: {
@@ -589,7 +583,7 @@ gsap.timeline({
         pin: true,
         pinSpacing: false,
         onEnter: () => run(dimensi = 1),
-        onLeaveBack: () => myChart.clear(),
+        onLeaveBack: () => run(dimensi=0),
         // markers: true
     }
 })
@@ -616,18 +610,18 @@ ScrollTrigger.create({
 });
 
 // PETA SECTION
-gsap.timeline({
-    scrollTrigger:
-    {
-        trigger: '#map-section',
-        start: 'center center',
-        end: '+=1500',
-        duration: 50,
-        scrub: true,
-        pin: true
-    }
-})
-    .fromTo("#map-chart", { scale: 0.5, opacity: 0 }, { scale: 1, opacity: 1, y: "+=20", duration: 0.5 })
+// gsap.timeline({
+//     scrollTrigger:
+//     {
+//         trigger: '#map-section',
+//         start: 'center center',
+//         end: '+=1500',
+//         duration: 50,
+//         scrub: true,
+//         pin: true
+//     }
+// })
+//     .fromTo("#map-chart", { scale: 0.5, opacity: 0 }, { scale: 1, opacity: 1, y: "+=20", duration: 0.5 })
 // .to("#pie-chart", { x: "-=450" })
 // .fromTo('#pie-explain', { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.5, x: "+=650" }, "-=0.5")
 

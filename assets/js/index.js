@@ -20,7 +20,7 @@ ScrollTrigger.create({
     // },
     pin: true,
     start: "top top",
-    end: "+=1500",
+    end: "+=750",
     scrub: true,
     // pinSpacing: false
 })
@@ -50,7 +50,7 @@ var gkTl = gsap.timeline({
         // immediateRender: true,
         trigger: "#gk",
         start: 'top top',
-        end: '+=8000 bottom',
+        end: '+=5000 bottom',
         scrub: true,
         pin: true,
         // markers: true
@@ -61,19 +61,19 @@ gkTl.from('#gkText1', { y: '50vh' })
 gkTl.set('#gkText1Container', { z: 15 }, 'text2Enter')
 gkTl.set('#gkText2', { opacity: 1 }, 'text2Enter')
 gkTl.from('#gkText2', { y: '-50vh' })
-gkTl.add('air')
-gkTl.to('#air', { color: 'orange' }, 'air')
-// gkTl.from('#gambar-air', { y: '50vh' }, 'air')
-gkTl.add('listrik')
-gkTl.to('#air', { color: 'black' }, 'listrik')
-gkTl.to('#listrik', { color: 'orange' }, 'listrik')
-// gkTl.to('#gambar-air', { x: '50vh' }, 'listrik')
-// gkTl.from('#gambar-listrik', { y: '50vh' }, 'listrik')
-gkTl.add('makan')
-gkTl.to('#listrik', { color: 'black' }, 'makan')
-gkTl.to('#makan', { color: 'orange' }, 'makan')
-// gkTl.to('#gambar-listrik', { x: '50vh' }, 'makan')
-// gkTl.from('#gambar-makan', { y: '50vh' }, 'makan')
+// gkTl.add('air')
+// gkTl.to('#air', { color: 'orange' }, 'air')
+// // gkTl.from('#gambar-air', { y: '50vh' }, 'air')
+// gkTl.add('listrik')
+// gkTl.to('#air', { color: 'black' }, 'listrik')
+// gkTl.to('#listrik', { color: 'orange' }, 'listrik')
+// // gkTl.to('#gambar-air', { x: '50vh' }, 'listrik')
+// // gkTl.from('#gambar-listrik', { y: '50vh' }, 'listrik')
+// gkTl.add('makan')
+// gkTl.to('#listrik', { color: 'black' }, 'makan')
+// gkTl.to('#makan', { color: 'orange' }, 'makan')
+// // gkTl.to('#gambar-listrik', { x: '50vh' }, 'makan')
+// // gkTl.from('#gambar-makan', { y: '50vh' }, 'makan')
 // gkTl.set('#makan', { delay: 0.1 })
 
 gsap.timeline({
@@ -87,13 +87,13 @@ gsap.timeline({
         // markers: true
     }
 })
-.fromTo('#page67-text', { opacity: 0, y: '+=100' }, { opacity: 1, y: 0, duration: 3 })
-.to("#page67-text", { duration:2 })
-.to("#page67-text", { opacity: 0.0, y: '-=350', duration:3 })
-.add('gray')
-.fromTo('#page67-text-2', { opacity: 0, y: '+=150' }, { opacity: 1, y: 0, duration: 3 }, 'gray')
-.from('#page67-gambar-warna', {filter: 'grayscale(100)', duration: 3}, 'gray')
-.to("#page67-text", { duration:2 })
+    .fromTo('#page67-text', { opacity: 0, y: '+=100' }, { opacity: 1, y: 0, duration: 3 })
+    .to("#page67-text", { duration: 2 })
+    .to("#page67-text", { opacity: 0.0, y: '-=350', duration: 3 })
+    .add('gray')
+    .fromTo('#page67-text-2', { opacity: 0, y: '+=150' }, { opacity: 1, y: 0, duration: 3 }, 'gray')
+    .from('#page67-gambar-warna', { filter: 'grayscale(100)', duration: 3 }, 'gray')
+    .to("#page67-text", { duration: 2 })
 
 function getPeopleTrigger(num) {
     return {
@@ -118,33 +118,20 @@ peopleTimeline2.to('g.moneter, g.both', { fill: 'orange', 'fill-opacity': 1 }, '
 
 var peopleTimeline2 = gsap.timeline(getPeopleTrigger(4))
 peopleTimeline2.to('#people g.moneter', { fill: 'gray', 'fill-opacity': 1 }, 'change')
-peopleTimeline2.to('g.multi, g.both', { fill: 'blue', 'fill-opacity': 1 }, 'change')
+peopleTimeline2.to('g.multi, g.both', { fill: '#3b82f6', 'fill-opacity': 1 }, 'change')
 
 var peopleTimeline2 = gsap.timeline(getPeopleTrigger(5))
 peopleTimeline2.to('#people g.multi', { fill: 'gray', 'fill-opacity': 1 }, 'change')
-peopleTimeline2.to('g.both', { fill: 'red', 'fill-opacity': 1 }, 'change')
+peopleTimeline2.to('g.both', { fill: '#dc2626', 'fill-opacity': 1 }, 'change')
 
 var peopleTimeline2 = gsap.timeline(getPeopleTrigger(6))
 // peopleTimeline2.to('#people g', { fill: 'gray', 'fill-opacity': .1 }, 'change')
 peopleTimeline2.to('g.both', { fill: 'gray', 'fill-opacity': 1 }, 'change')
 // peopleTimeline2.to('g.moneter', { fill: 'orange', 'fill-opacity': 1 }, 'change')
-peopleTimeline2.to('g.multi', { fill: 'green', 'fill-opacity': 1 }, 'change')
+peopleTimeline2.to('g.multi', { fill: '#3b82f6', 'fill-opacity': 1 }, 'change')
 
 // PIE SECTION
-gsap.timeline({
-    scrollTrigger:
-    {
-        trigger: '#pie-section',
-        start: 'center center',
-        end: '+=1500',
-        duration: 50,
-        scrub: true,
-        pin: true
-    }
-})
-    .fromTo("#pie-chart", { scale: 0.5, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.5 })
-    .to("#pie-chart", { x: "-=450" })
-    .fromTo('#pie-explain', { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.5, x: "+=650" }, "-=0.5")
+
 
 // PIE CHART
 var myPie = echarts.init(document.getElementById('myPie'));
@@ -158,25 +145,26 @@ var pie_option = {
         {
             name: 'Kontribusi',
             type: 'pie',
-            radius: '80%',
-            itemStyle: {
-                normal: {
-                    label: {
-                        show: true,
-                        position: 'inner',
-                        formatter: function (params) {
-                            return params.value + '%\n' + params.name;
-                        }
-                    },
-                    labelLine: {
-                        show: true
-                    }
-                }
-            },
+            radius: '50%',
+            selectedMode: 'single',
+            // itemStyle: {
+            //     normal: {
+            //         label: {
+            //             show: true,
+            //             position: 'inner',
+            //             formatter: function (params) {
+            //                 return params.value + '%\n' + params.name;
+            //             }
+            //         },
+            //         labelLine: {
+            //             show: true
+            //         }
+            //     }
+            // },
             data: [
-                { value: 54, name: 'Pendidikan', itemStyle: { color: 'green' } },
-                { value: 20, name: 'Standar Hidup', itemStyle: { color: '#a90000' } },
-                { value: 26, name: 'Kesehatan', itemStyle: { color: 'yellow' } }
+                { value: 54, name: 'Pendidikan', itemStyle: { color: '#fac858' }, selected: true },
+                { value: 20, name: 'Standar Hidup', itemStyle: { color: '#ee6666' } },
+                { value: 26, name: 'Kesehatan', itemStyle: { color: '#73c0de' } }
             ],
             emphasis: {
                 itemStyle: {
@@ -189,8 +177,36 @@ var pie_option = {
     ]
 };
 // Tampilkan grafik dengan konfigurasi yang telah ditentukan
-myPie.setOption(pie_option);
+;
 
+gsap.timeline({
+    scrollTrigger:
+    {
+        trigger: '#pie-section',
+        start: 'center center',
+        end: '+=1500',
+        duration: 50,
+        scrub: true,
+        pin: true
+    }
+})
+    // .fromTo("#pie-chart", { scale: 0.5, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.5 })
+    .to("#pie-chart", { x: "-=450" })
+    .fromTo('#pie-explain', { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.5, x: "+=650" }, "-=0.5")
+
+ScrollTrigger.create({
+    trigger: '#myPie',
+    start: 'center center',
+    // markers: true,
+    onEnter: () => myPie.setOption(pie_option)
+});
+
+ScrollTrigger.create({
+    trigger: '#myPie',
+    start: 'top center',
+    // markers: true,
+    onLeaveBack: () => myPie.clear(),
+});
 
 // KONTRIBUSI CHART
 var chartDom = document.getElementById('bar-chart');
@@ -583,7 +599,7 @@ gsap.timeline({
         pin: true,
         pinSpacing: false,
         onEnter: () => run(dimensi = 1),
-        onLeaveBack: () => run(dimensi=0),
+        onLeaveBack: () => run(dimensi = 0),
         // markers: true
     }
 })

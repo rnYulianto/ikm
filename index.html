@@ -13,11 +13,13 @@
     <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.1/dist/echarts.min.js"></script>
     <script src="//unpkg.com/alpinejs" defer></script>
 
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="assets/css/index.css">
     <title>Kemiskinan Multidimensi</title>
 </head>
 
-<body>
+<body class="text-3xl">
     <section class="flex bg-gray-100 fixed h-screen w-screen top-0 left-0 -z-50">
         <div id="people" style="max-width: 50%;" class="w-full p-10 flex justify-end">
             <svg version="1.1" height="100%" x="0px" y="0px" viewBox="0 0 9714.3475 17569.317"
@@ -848,12 +850,12 @@
         </div>
     </section>
     <div id="cover" class="bg-white cover flex w-screen h-screen text-center justify-center overflow-hidden">
-        <video autoplay muted class="object-fill w-full">
+        <video autoplay muted class="w-full h-full">
             <source src="./assets/videos/cover.mp4" type="video/mp4">
         </video>
-        <div class="title-container overflow-hidden w-screen">
+        <div class="title-container overflow-hidden w-screen h-full">
             <div class="intro bg-black grow flex flex-col justify-end">
-                <p id="face-text" class="pb-5">
+                <p id="face-text" class="">
                     Seribu Wajah
                 </p>
             </div>
@@ -1042,30 +1044,35 @@
             </g>
         </svg>
         <div class="absolute top-0 left-0 flex justify-center items-center w-screen max-h-screen h-full">
-            <p id="text-sdgs" class="w-1/2 text-2xl text-justify">
-                Dunia berkomitmen untuk mengakhiri kemiskinan ekstrim pada tahun 2030. Namun karena kemiskinan bersifat multidimensi,
-                banyak program penanggulangan kemiskinan yang masih belum menjangkau masyarakat atau memiliki dampak jangka panjang.
+            <p id="text-sdgs" class="w-1/2 text-justify">
+                Dunia berkomitmen untuk mengakhiri kemiskinan ekstrim pada tahun 2030. Namun karena kemiskinan bersifat
+                multidimensi,
+                banyak program penanggulangan kemiskinan yang masih belum menjangkau masyarakat atau memiliki dampak
+                jangka panjang.
             </p>
         </div>
     </section>
-    <section id="gk" class="h-screen w-screen bg-white flex flex-col">
-        <div id="gkText1Container" class="grow overflow-hidden flex items-center bg-white">
-            <p class="text-2xl px-10 text-justify" id="gkText1">Di Indonesia, jumlah pengeluaran dijadikan pendekatan untuk menentukan tingkat pendapatan seseorang. 
-                Pada tahun 2022 seseorang dikatakan miskin bila pengeluaran selama sebulan kurang dari 535.547 rupiah. 
+    <section id="gk" class="h-screen w-screen bg-white flex flex-col text-3xl">
+        <div id="gkText1Container" class="grow overflow-hidden flex items-center bg-white w-2/3 text-justify">
+            <p class=" px-10" id="gkText1">Di Indonesia, jumlah pengeluaran dijadikan pendekatan
+                untuk menentukan tingkat pendapatan seseorang.
+                Pada tahun 2022 seseorang dikatakan miskin bila pengeluaran selama sebulan kurang dari 535.547 rupiah.
                 Konsep ini disebut dengan penghitungan kemiskinan moneter. </p>
         </div>
-        <div class="bg-white relative h-24 flex flex-col justify-center overflow-hidden">
-            <div class="bg-black w-screen h-1"></div>
+        <div class="bg-white relative h-40 flex flex-col justify-center overflow-hidden">
+            <div class="bg-black w-screen h-1 border px-10 text-red-600 font-bold">
+                Garis Kemiskinan
+            </div>
             <div id="line" class="bg-white absolute z-30 w-screen h-full"></div>
-            <div class="absolute right-10 top-3 z-20 bg-white px-3 text-justify">
-                <p class="text-6xl">535.547</p>
+            <div class="absolute right-12 -top-3 z-20 bg-white px-3 text-justify font-bold text-red-600">
+                <p class="text-9xl">535.547</p>
                 <p class="text-right">rupiah/kapita/bulan</p>
             </div>
         </div>
-        <div class="relative grow overflow-hidden flex items-center bg-white z-10">
-            <p id="gkText2" class="opacity-0 z-20 text-2xl px-10">
-                Di sisi lain, kemiskinan tidak hanya berbicara dari sisi moneter. 
-                Kemiskinan juga berbicara tentang hidup yang jauh dari 
+        <div class="relative grow overflow-hidden flex items-center bg-white z-10 w-2/3 text-justify">
+            <p id="gkText2" class="opacity-0 z-20 px-10">
+                Di sisi lain, kemiskinan tidak hanya berbicara dari sisi moneter.
+                Kemiskinan juga berbicara tentang hidup yang jauh dari
                 <span id="air">akses air bersih,</span>
                 <span id="listrik">listrik,</span>
                 <span id="makan">maupun makan teratur dan bergizi.</span>
@@ -1088,78 +1095,66 @@
 
     <section id="suyati-section"
         class="bg-[url('/assets/images/suyati_shadow.jpg')] bg-cover text-white bg-fixed h-full w-screen">
-        <div class="w-1/2 p-10 bg-gradient-to-r from-black flex flex-col gap-y-14">
+        <div class="w-2/5 p-10 bg-gradient-to-r from-black flex flex-col gap-y-14 text-justify text-3xl">
             <p>
-                <font size="+3">
-                    Suyati adalah adalah seorang perempuan berusia 40 tahun yang hidup di pinggiran Teluk Jakarta.
-                    Ia tinggal bersama suami dan ketiga anaknya.
-                    Ia hanya tamatan SD. Anak pertamanya berhenti sekolah di kelas 2 SMP karena membantu ayahnya
-                    bekerja sebagai nelayan.
-                </font>
+                Suyati adalah adalah seorang perempuan berusia 40 tahun yang hidup di pinggiran Teluk Jakarta.
+                Ia tinggal bersama suami dan ketiga anaknya.
+                Ia hanya tamatan SD. Anak pertamanya berhenti sekolah di kelas 2 SMP karena membantu ayahnya
+                bekerja sebagai nelayan.
             </p>
             <hr style="border-top: 2px solid white;">
             <p>
-                <font size="+3">
-                    Rumah Suyati tidak terlalu lebar terbuat dari bilik kayu beratap seng dan tidak mendapatkan aliran listrik PLN, sehingga ia mendapatkan listrik secara
-                    ilegal.
-                </font>
+                Rumah Suyati tidak terlalu lebar terbuat dari bilik kayu beratap seng dan tidak mendapatkan aliran
+                listrik PLN, sehingga ia mendapatkan listrik secara
+                ilegal.
             </p>
             <hr style="border-top: 2px solid white;">
             <p>
-                <font size="+3">
-                    Rumah Suyati tidak memiliki toilet.
-                    Ia menggunakan toilet umum untuk mencuci, mandi, dan buang air dengan iuran bulanan sebesar Rp
-                    50.000,00.
-                </font>
+                Rumah Suyati tidak memiliki toilet.
+                Ia menggunakan toilet umum untuk mencuci, mandi, dan buang air dengan iuran bulanan sebesar Rp
+                50.000,00.
             </p>
             <hr style="border-top: 2px solid white;">
             <p>
-                <font size="+3">
-                    Suyati bekerja sebagai pengupas kulit kerang seharian. Anak bungsunya sering makan mie instan
-                    karena ia tidak sempat memasak.
-                    Setiap bulan ia bisa mengantongi uang sebesar 200 hingga 300 ribu rupiah untuk membantu suaminya
-                    yang bekerja sebagai nelayan dengan
-                    penghasilan per bulan sekitar Rp2.000.000,00.
-                </font>
+                Suyati bekerja sebagai pengupas kulit kerang seharian. Anak bungsunya sering makan mie instan
+                karena ia tidak sempat memasak.
+                Setiap bulan ia bisa mengantongi uang sebesar 200 hingga 300 ribu rupiah untuk membantu suaminya
+                yang bekerja sebagai nelayan dengan
+                penghasilan per bulan sekitar Rp2.000.000,00.
             </p>
             <hr style="border-top: 2px solid white;">
             <p>
-                <font size="+3">
-                    Apabila dibandingkan dengan garis kemiskinan nasional pada Maret 2018, keluarga Suyati tidak
-                    tergolong miskin berdasarkan pendekatan moneter.
-                    Pemerintah menetapkan garis kemiskinan per kapita sebesar Rp 401.222,00 atau Rp 1,84 juta per
-                    rumah tangga per bulan.
-                    Sehingga rumah tangga Suyati tidak tergolong miskin seperti yang ditetapkan oleh BPS.
-                </font>
+                Apabila dibandingkan dengan garis kemiskinan nasional pada Maret 2018, keluarga Suyati tidak
+                tergolong miskin berdasarkan pendekatan moneter.
+                Pemerintah menetapkan garis kemiskinan per kapita sebesar Rp 401.222,00 atau Rp 1,84 juta per
+                rumah tangga per bulan.
+                Sehingga rumah tangga Suyati tidak tergolong miskin seperti yang ditetapkan oleh BPS.
             </p>
         </div>
     </section>
 
-    <section id="page67-section" class="flex flex-col justify-center items-center h-screen overflow-y-hidden text-white">
+    <section id="page67-section"
+        class="flex flex-col justify-center items-center h-screen overflow-y-hidden text-white">
         <div style="position: relative; display: inline-block;">
-            <img id="page67-gambar-warna" src="assets\images\india_warna.png" alt="Cover" class="w-screen h-screen object-cover" />
+            <img id="page67-gambar-warna" src="assets\images\india_warna.png" alt="Cover"
+                class="w-screen h-screen object-cover" />
             <!-- <img id="page67-gambar" src="assets\images\india.jpg" alt="Cover"
                 style="display: block; position: relative;"></img> -->
-            <div id="page67-text"
-                class="absolute top-0 left-0 w-full h-full flex justify-end items-center pr-10">
+            <div id="page67-text" class="absolute top-0 left-0 w-full h-full flex justify-end items-center pr-10">
                 <p class="bg-black/60 w-1/2 h-fit text-justify p-10 rounded-xl">
-                    <font size="+3">
-                        Kita tidak bisa menghilangkan tantangan ini dengan berfokus pada pendekatan moneter saja.
-                        Untuk mengatasi perbedaan tersebut, kita perlu memahami kemiskinan dari sudut pandang
-                        multidimensi.
-                    </font>
+                    Kita tidak bisa menghilangkan tantangan ini dengan berfokus pada pendekatan moneter saja.
+                    Untuk mengatasi perbedaan tersebut, kita perlu memahami kemiskinan dari sudut pandang
+                    multidimensi.
                 </p>
             </div>
-            <div id="page67-text-2"
-                class="absolute top-0 left-0 w-full h-full flex justify-center items-center">
+            <div id="page67-text-2" class="absolute top-0 left-0 w-full h-full flex justify-center items-center">
                 <p class="bg-black/60 w-2/3 h-fit text-justify p-10 rounded-xl">
-                    <font size="+3">
-                        Untuk hasil jangka panjang, Indonesia membutuhkan program holistik yang bersifat spesifik dan sesuai
-                        konteks.
-                        Dengan pendekatan holistik yang mengatasi tantangan multidimensi yang unik dari kemiskinan,
-                        rumah tangga dapat keluar dari lingkaran kemiskinan untuk jangka panjang dan
-                        memungkinkan generasi mendatang untuk berkembang.
-                    </font>
+                    Untuk hasil jangka panjang, Indonesia membutuhkan program holistik yang bersifat spesifik dan
+                    sesuai
+                    konteks.
+                    Dengan pendekatan holistik yang mengatasi tantangan multidimensi yang unik dari kemiskinan,
+                    rumah tangga dapat keluar dari lingkaran kemiskinan untuk jangka panjang dan
+                    memungkinkan generasi mendatang untuk berkembang.
                 </p>
             </div>
         </div>
@@ -1167,7 +1162,7 @@
 
     <section id="people-section" class="flex">
         <div class="w-1/2"></div>
-        <div class="flex flex-col w-1/2 text-2xl px-5">
+        <div class="flex flex-col w-1/2 px-5">
             <div id="people-story-1" class="min-h-screen flex flex-col justify-center">
                 <p class="text-center">
                     Pada tahun 2022 dari 100 penduduk
@@ -1185,24 +1180,26 @@
             </div>
             <div id="people-story-4" class="min-h-screen flex flex-col justify-center">
                 <p class="text-center">
-                    12 diantaranya dinyatakan sebagai miskin multidimensi
+                    12 diantaranya dinyatakan sebagai <span class="text-blue-500 font-bold">miskin multidimensi</span>
                 </p>
             </div>
             <div id="people-story-5" class="min-h-screen flex flex-col justify-center">
                 <p class="text-center">
-                    sementara 9 lainya sebagai miskin multidimensi tapi tidak tercatat pada kemiskinan nasional
+                    3 orang tercatat miskin, baik secara <span class="text-red-600 font-bold">moneter dan
+                        multidimensional</span>
                 </p>
             </div>
             <div id="people-story-6" class="min-h-screen flex flex-col justify-center">
                 <p class="text-center">
-                    Jadi secara umum begini gambaran kemiskinan di Indonesia
+                    Sedangkan 9 orang dari masyarakat yang tercatat pada miskin multidimensi <span
+                        class="text-blue-500 font-bold">tidak tercatat</span> secara miskin moneter
                 </p>
             </div>
         </div>
     </section>
     <section id="pie-section" class="bg-white h-screen">
         <div id="pie-chart" class="flex flex-row-reverse items-center">
-            <div id="myPie" style="width: 100%;height:1000px;"></div>
+            <div id="myPie" class="w-full h-screen"></div>
         </div>
         <!-- <div id="pie-explain" class="-translate-y-16">
             <p class="text-center text-xl font-semibold">Keterbatasan yang dimiliki membatasi masyarakat untuk
@@ -1210,12 +1207,12 @@
         </div> -->
         <div id="pie-explain" class="flex flex-row-reverse items-center -z-10"
             style="position: absolute; border-radius: 10px; display: inline-block; top: 30%; left: 20%; text-align: center; justify-content: center; align-items: center; width: 700px; background-color: rgba(0, 0, 0, 0.6);">
-            <p style="color: white; text-align: center; padding: 30px;">
-                <font size="+2">
-                    Aspek apa yang menentukan seseorang dikatakan miskin secara dimensional?
-                    Aspek pendidikan berkontribusi sebesar 54 persen dalam menentukan seseorang dikatakan miskin secara dimensional. 
-                    Sedangkan aspek kesehatan dan standar hidup masing-masing berkontribusi sebesar 26 persen dan 20 persen dalam menentukan seseorang dikatan miskin secara dimensional.
-                </font>
+            <p style="color: white; text-align: justify; padding: 30px;">
+                Aspek apa yang menentukan seseorang dikatakan miskin secara dimensional?
+                Aspek pendidikan berkontribusi sebesar 54 persen dalam menentukan seseorang dikatakan miskin secara
+                dimensional.
+                Sedangkan aspek kesehatan dan standar hidup masing-masing berkontribusi sebesar 26 persen dan 20
+                persen dalam menentukan seseorang dikatan miskin secara dimensional.
             </p>
         </div>
     </section>

@@ -14,14 +14,14 @@
     <script src="//unpkg.com/alpinejs" defer></script>
 
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
-    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="assets/css/index.css">
     <title>Kemiskinan Multidimensi</title>
 </head>
 
-<body class="text-3xl">
-    <section class="flex bg-gray-100 fixed h-screen w-screen top-0 left-0 -z-50">
-        <div id="people" style="max-width: 50%;" class="w-full p-10 flex justify-end">
+<body class="text-2xl md:text-3xl">
+    <section class="flex flex-col bg-gray-100 fixed h-screen w-screen top-0 left-0 -z-50">
+        <h1 class="w-full text-center font-bold"><span class="italic">Missmatch</span> kemiskinan di Indonesia</h1>
+        <div id="people" class="grow h-full w-full md:w-1/2 p-10 flex justify-center md:justify-end">
             <svg version="1.1" height="100%" x="0px" y="0px" viewBox="0 0 9714.3475 17569.317"
                 enable-background="new 0 0 1874.228 1638.001" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
                 xmlns:svg="http://www.w3.org/2000/svg">
@@ -853,13 +853,13 @@
         <video autoplay muted class="w-full h-full">
             <source src="./assets/videos/cover.mp4" type="video/mp4">
         </video>
-        <div class="title-container overflow-hidden w-screen h-full">
+        <div class="title-container overflow-hidden w-screen h-screen">
             <div class="intro bg-black grow flex flex-col justify-end">
-                <p id="face-text" class="">
+                <p id="face-text" class="pb-5">
                     Seribu Wajah
                 </p>
             </div>
-            <div class="main-intro bg-black grow z-10">KEMISKINAN.</div>
+            <div class="main-intro bg-black grow z-10 overflow-visible">KEMISKINAN.</div>
         </div>
     </div>
     <section class="h-screen w-screen bg-gradient-to-b from-black to-white"></section>
@@ -1044,7 +1044,7 @@
             </g>
         </svg>
         <div class="absolute top-0 left-0 flex justify-center items-center w-screen max-h-screen h-full">
-            <p id="text-sdgs" class="w-1/2 text-justify">
+            <p id="text-sdgs" class="w-3/4 md:w-1/2 text-justify text-lg md:text-3xl">
                 Dunia berkomitmen untuk mengakhiri kemiskinan ekstrim pada tahun 2030. Namun karena kemiskinan bersifat
                 multidimensi,
                 banyak program penanggulangan kemiskinan yang masih belum menjangkau masyarakat atau memiliki dampak
@@ -1052,24 +1052,24 @@
             </p>
         </div>
     </section>
-    <section id="gk" class="h-screen w-screen bg-white flex flex-col text-3xl">
-        <div id="gkText1Container" class="grow overflow-hidden flex items-center bg-white w-2/3 text-justify">
+    <section id="gk" class="h-screen w-screen bg-white flex flex-col">
+        <div id="gkText1Container" class="grow overflow-hidden flex items-center bg-white w-full md:w-2/3 text-justify">
             <p class=" px-10" id="gkText1">Di Indonesia, jumlah pengeluaran dijadikan pendekatan
                 untuk menentukan tingkat pendapatan seseorang.
                 Pada tahun 2022 seseorang dikatakan miskin bila pengeluaran selama sebulan kurang dari 535.547 rupiah.
                 Konsep ini disebut dengan penghitungan kemiskinan moneter. </p>
         </div>
-        <div class="bg-white relative h-40 flex flex-col justify-center overflow-hidden">
-            <div class="bg-black w-screen h-1 border px-10 text-red-600 font-bold">
+        <div class="bg-white text-red-600 relative h-40 flex flex-col justify-center overflow-hidden">
+            <div class="bg-black w-screen h-1 border px-10 font-bold text-base md:text-3xl">
                 Garis Kemiskinan
             </div>
             <div id="line" class="bg-white absolute z-30 w-screen h-full"></div>
-            <div class="absolute right-12 -top-3 z-20 bg-white px-3 text-justify font-bold text-red-600">
-                <p class="text-9xl">535.547</p>
-                <p class="text-right">rupiah/kapita/bulan</p>
+            <div class="absolute right-12 top-7 md:-top-3 z-20 bg-white px-3 text-justify font-bold">
+                <p class="md:text-9xl text-6xl">535.547</p>
+                <p class="text-right text-base md:text-3xl">rupiah/kapita/bulan</p>
             </div>
         </div>
-        <div class="relative grow overflow-hidden flex items-center bg-white z-10 w-2/3 text-justify">
+        <div class="relative grow overflow-hidden flex items-center bg-white z-10 w-full md:w-2/3 text-justify">
             <p id="gkText2" class="opacity-0 z-20 px-10">
                 Di sisi lain, kemiskinan tidak hanya berbicara dari sisi moneter.
                 Kemiskinan juga berbicara tentang hidup yang jauh dari
@@ -1095,7 +1095,7 @@
 
     <section id="suyati-section"
         class="bg-[url('/assets/images/suyati_shadow.jpg')] bg-cover text-white bg-fixed h-full w-screen">
-        <div class="w-2/5 p-10 bg-gradient-to-r from-black flex flex-col gap-y-14 text-justify text-3xl">
+        <div class="w-full md:w-2/5 p-10 bg-gradient-to-r from-black flex flex-col gap-y-14 text-justify">
             <p>
                 Suyati adalah adalah seorang perempuan berusia 40 tahun yang hidup di pinggiran Teluk Jakarta.
                 Ia tinggal bersama suami dan ketiga anaknya.
@@ -1135,20 +1135,20 @@
 
     <section id="page67-section"
         class="flex flex-col justify-center items-center h-screen overflow-y-hidden text-white">
-        <div style="position: relative; display: inline-block;">
+        <div class="relative">
             <img id="page67-gambar-warna" src="assets\images\india_warna.png" alt="Cover"
                 class="w-screen h-screen object-cover" />
             <!-- <img id="page67-gambar" src="assets\images\india.jpg" alt="Cover"
                 style="display: block; position: relative;"></img> -->
-            <div id="page67-text" class="absolute top-0 left-0 w-full h-full flex justify-end items-center pr-10">
-                <p class="bg-black/60 w-1/2 h-fit text-justify p-10 rounded-xl">
+            <div id="page67-text" class="absolute top-0 left-0 w-full h-full flex justify-end items-center p-10">
+                <p class="bg-black/60 w-full md:w-1/2 h-fit text-justify p-10 rounded-xl">
                     Kita tidak bisa menghilangkan tantangan ini dengan berfokus pada pendekatan moneter saja.
                     Untuk mengatasi perbedaan tersebut, kita perlu memahami kemiskinan dari sudut pandang
                     multidimensi.
                 </p>
             </div>
-            <div id="page67-text-2" class="absolute top-0 left-0 w-full h-full flex justify-center items-center">
-                <p class="bg-black/60 w-2/3 h-fit text-justify p-10 rounded-xl">
+            <div id="page67-text-2" class="absolute top-0 left-0 w-full h-full flex justify-center items-center p-10">
+                <p class="bg-black/60 w-full md:w-2/3 h-fit text-justify p-10 rounded-xl">
                     Untuk hasil jangka panjang, Indonesia membutuhkan program holistik yang bersifat spesifik dan
                     sesuai
                     konteks.
@@ -1161,10 +1161,10 @@
     </section>
 
     <section id="people-section" class="flex">
-        <div class="w-1/2"></div>
-        <div class="flex flex-col w-1/2 px-5">
+        <div class="w-0 md:w-1/2"></div>
+        <div class="flex flex-col w-full md:w-1/2 px-5 font-bold">
             <div id="people-story-1" class="min-h-screen flex flex-col justify-center">
-                <p class="text-center">
+                <p class="text-center drop-shadow-lg shadow-white">
                     Pada tahun 2022 dari 100 penduduk
                 </p>
             </div>
@@ -1197,64 +1197,76 @@
             </div>
         </div>
     </section>
-    <section id="pie-section" class="bg-white h-screen">
+    <section id="pie-section" class="bg-white h-screen relative">
         <div id="pie-chart" class="flex flex-row-reverse items-center">
             <div id="myPie" class="w-full h-screen"></div>
         </div>
-        <div id="pie-explain" class="flex flex-row-reverse items-center -z-10"
-            style="position: absolute; border-radius: 10px; display: inline-block; top: 30%; left: 20%; text-align: center; justify-content: center; align-items: center; width: 700px; background-color: rgba(0, 0, 0, 0.6);">
-            <p style="color: white; text-align: justify; padding: 30px;">
-                Kontributor utama pada kemiskinan multidimensi yakni dimensi Pendidikan 
-                sebesar 51 persen. Sehingga, Pendidikan semestinya menjadi prioritas 
+        <div class="flex justify-center items-center -z-10 absolute top-0 left-0 w-full h-full">
+            <p id="pie-explain" class="text-white text-justify bg-black bg-opacity-60 w-3/4 md:w-2/5 rounded-xl p-10">
+                Kontributor utama pada kemiskinan multidimensi yakni dimensi Pendidikan
+                sebesar 51 persen. Sehingga, Pendidikan semestinya menjadi prioritas
                 dalam upaya pengentasan kemiskinan multidimensi.
 
             </p>
         </div>
     </section>
     <section id="data-section" class="flex flex-row-reverse items-center bg-white h-screen">
-        <div class="basis-2/3">
-            <div id="bar-chart" style="width: 100%;height:800px;"></div>
+        <div class="w-full md:w-2/3">
+            <div id="bar-chart" class="w-full h-screen"></div>
         </div>
     </section>
-    <section id="story-section" class="flex flex-col relative">
-        <div id="story-1" class="basis-1/3 min-h-screen">
-            <div
-                style="position: absolute; border-radius: 10px; display: inline-block; left: 5%; text-align: justify; justify-content: center; align-items: center; width: 500px; background-color: rgba(0, 0, 0, 0.6);">
-                <p style="color: white; text-align: center; padding: 30px;">
-                    <font size="+1.5">
-                        Indikator sanitasi pada dimensi 'standar hidup layak'
-                        berkontribusi sebesar 4,11 persen terhadap kemiskinan multidimensi.
-                    </font>
-                </p>
-            </div>
+    <section id="story-section" class="flex flex-col relative text-white w-full md:w-1/3 px-10 md:px-0 md:pl-10">
+        <div id="story-1" class="min-h-screen pt-10">
+            <p class="text-justify p-10 bg-black bg-opacity-60 rounded-xl">
+                Indikator sanitasi pada <span class="text-red-500 font-bold">dimensi standar hidup layak</span>
+                berkontribusi sebesar 4,11 persen terhadap kemiskinan multidimensi.
+            </p>
         </div>
-        <div id="story-2" class="basis-1/3 min-h-screen">
-            <div
-                style="position: absolute; border-radius: 10px; display: inline-block; left: 5%; text-align: justify; justify-content: center; align-items: center; width: 500px; background-color: rgba(0, 0, 0, 0.6);">
-                <p style="color: white; text-align: center; padding: 30px;">
-                    <font size="+1.5">
-                        Sejalan dengan level dimensi, 
-                        'tidak tamat SMP' menjadi indikator penyumbang utama
-                        pada kemiskinan multidimensi, yakni sebesar 38,14 persen.
-                    </font>
-                </p>
-            </div>
+        <div id="story-2" class="min-h-screen pt-10">
+            <p class="text-justify p-10 bg-black bg-opacity-60 rounded-xl">
+                Sejalan dengan level <span class="font-bold text-orange-300">dimensi pendidikan</span> ,
+                'tidak tamat SMP' menjadi indikator penyumbang utama
+                pada kemiskinan multidimensi, yakni sebesar 38,14 persen.
+            </p>
         </div>
-        <div id="story-3" class="basis-1/3 min-h-screen">
-            <div
-                style="position: absolute; border-radius: 10px; display: inline-block; left: 5%; text-align: justify; justify-content: center; align-items: center; width: 500px; background-color: rgba(0, 0, 0, 0.6);">
-                <p style="color: white; text-align: center; padding: 30px;">
-                    <font size="+1.5">
-                        Sementara pada dimensi kesehatan, indikator kecukupan kalori 
-                        menyumbang 20 persen pada kemiskinan multidimensi.
-                    </font>
-                </p>
-            </div>
+        <div id="story-3" class="min-h-screen pt-10">
+            <p class="text-justify p-10 bg-black bg-opacity-60 rounded-xl">
+                Sementara pada <span class="font-bold text-sky-500">dimensi kesehatan</span>, indikator kecukupan kalori
+                menyumbang 20 persen pada kemiskinan multidimensi.
+            </p>
+        </div>
+        <div id="story-4" class="min-h-screen pt-10">
+            <p class="text-justify p-10 bg-black bg-opacity-60 rounded-xl">
+                fdsj fskjfs faskdfuha wfdsjfsa ksdfhkhk jhsbj jsywiue.
+            </p>
         </div>
     </section>
 
-    <section id="map-section" class="bg-white h-screen" style="width: 100%;height:900px;">
-        <div id="peta" style="width: 100%;height:900px;"></div>
+    <section id="map-section" class="bg-white h-screen w-full px-5">
+        <div id="peta" class="w-full h-full"></div>
+    </section>
+    <section id="quote" class="h-screen w-screen bg-gradient-to-b from-white to-black flex items-center">
+        <div id="sen-quote"
+            class="bg-white z-10 rounded-xl shadow-lg border border-gray-200 p-10 text-center container mx-auto">
+            <figure class="max-w-screen-md mx-auto text-center">
+                <svg aria-hidden="true" class="w-12 h-12 mx-auto mb-3 text-gray-400" viewBox="0 0 24 27" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M14.017 18L14.017 10.609C14.017 4.905 17.748 1.039 23 0L23.995 2.151C21.563 3.068 20 5.789 20 8H24V18H14.017ZM0 18V10.609C0 4.905 3.748 1.038 9 0L9.996 2.151C7.563 3.068 6 5.789 6 8H9.983L9.983 18L0 18Z"
+                        fill="currentColor" />
+                </svg>
+                <blockquote>
+                    <p class="text-2xl italic font-medium text-gray-900">Poverty is not just a lack of money; it is not
+                        having the capability to realize one’s full potential as a human being.</p>
+                </blockquote>
+                <figcaption class="flex items-center justify-center mt-6 space-x-3">
+                    <img class="w-6 h-6 rounded-full" src="assets/images/sen.jpg" alt="Amartya Sen">
+                    <div class="flex items-center">
+                        <cite class="pr-3 font-medium text-gray-900">Amartya Sen</cite>
+                    </div>
+                </figcaption>
+            </figure>
+        </div>
     </section>
 </body>
 <script src="assets/js/index.js"></script>

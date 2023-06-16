@@ -102,6 +102,22 @@ gsap.timeline({
     .from('#page67-gambar-warna', { filter: 'grayscale(100)', duration: 3 }, 'gray')
     .to("#page67-text", { duration: 2 })
 
+// PENJELASAN MPI
+gsap.timeline({
+    scrollTrigger:
+    {
+        trigger: '#page70-section',
+        start: 'center center',
+        end: '+=1200',
+        scrub: true,
+        pin: true,
+        // markers: true
+    }
+})
+    .fromTo('#page70-text-1', { opacity: 0, y: '+=100' }, { opacity: 1, y: 0, duration: 2 })
+    .fromTo('#page70-text-2', { opacity: 0, y: '+=100' }, { opacity: 1, y: 0, duration: 2 })
+    .fromTo('#page70-text-3', { opacity: 0, y: '+=100' }, { opacity: 1, y: 0, duration: 4 })
+
 function getPeopleTrigger(num) {
     return {
         scrollTrigger: {
@@ -136,8 +152,6 @@ var peopleTimeline2 = gsap.timeline(getPeopleTrigger(6))
 peopleTimeline2.to('g.both', { fill: 'gray', 'fill-opacity': 1 }, 'change')
 // peopleTimeline2.to('g.moneter', { fill: 'orange', 'fill-opacity': 1 }, 'change')
 peopleTimeline2.to('g.multi', { fill: '#3b82f6', 'fill-opacity': 1 }, 'change')
-
-// PIE SECTION
 
 
 // PIE CHART
@@ -690,6 +704,20 @@ $.get('assets/provinsi.json', function (usaJson) {
     myPeta.setOption(option_peta);
 });
 
+// ENDING
+gsap.timeline({
+    scrollTrigger:
+    {
+        trigger: '#ending',
+        start: 'center center',
+        end: '+=1200',
+        scrub: true,
+        pin: true,
+        // markers: true
+    }
+})
+    .fromTo('#ending-text', { opacity: 0, y: '+=100' }, { opacity: 1, y: 0, duration: 2 })
+    
 gsap.timeline({
     scrollTrigger:
     {
@@ -705,3 +733,4 @@ gsap.timeline({
 
 // option_peta && myPeta.setOption(option_peta);
 // Satria End Here
+
